@@ -120,18 +120,6 @@ html, body {
     100% {top: 0px; opacity: 1;}
 }
 
-/* PAGE 2 - THAN PHONG */
-.than-phong-page {
-    background-position: right;
-    background-image: url("assets/images/phong.svg");
-}
-
-/* PAGE 3: XOAN */
-.hai-xoan-page {
-    background-position: left;
-    background-image: url("assets/images/xoan.svg");
-}
-
 /* GLOBAL VALUES */
 .justify-center {
     display: flex;

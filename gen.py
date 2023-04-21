@@ -1,4 +1,5 @@
 crs = """<div class="page-view $PAGENAME$-page" mouseColor="$MOUSECOLOR$" style="background-color: $BACKGROUND$">
+                    <img src="$IMAGELINK$" style="position:absolute; height: 100vh; object-position: 100% 50%; object-fit:cover; padding-left: 60vw;"/>
                     <h1 class="title" style="color: $TITLECOLOR$; padding-left: 5vw; padding-top: 5vh;" targetText="$TITLETEXT$">&nbsp;</h1>
                     <p class="pre-fade-ani famous-quote" style="text-align: left; color: $TEXTCOLOR$; padding: 0 0 0 6vw;">
                         "$FAMOUSQOUTE$"
@@ -55,6 +56,7 @@ crs = """<div class="page-view $PAGENAME$-page" mouseColor="$MOUSECOLOR$" style=
                 </div>"""
 
 cls = """<div class="page-view $PAGENAME$-page" mouseColor="$MOUSECOLOR$" style="background-color: $BACKGROUND$">
+                    <img src="$IMAGELINK$" style="position:absolute; height: 100vh; object-position: 100% 50%; object-fit:cover;"/>
                     <h1 class="title" style="color: $TITLECOLOR$; padding-left: 42vw; padding-top: 5vh;" targetText="$TITLETEXT$">&nbsp;</h1>
                     <p class="pre-fade-ani famous-quote" style="text-align: left; color: $TEXTCOLOR$; padding-left: 43vw;">
                         "$FAMOUSQOUTE$"
@@ -112,8 +114,8 @@ cls = """<div class="page-view $PAGENAME$-page" mouseColor="$MOUSECOLOR$" style=
 
 # $PAGENAME$, $MOUSECOLOR$, $TITLETEXT$, $FAMOUSQOUTE$, $PRO$, $SERT$, $INCLASS$, $DESCRIPTION$, $PER1$, $AMOUNT1$, $PER2$, $AMOUNT2$, $PER3$, $AMOUNT3$, $PRIMCOLOR$, $TITLECOLOR$, $TEXTCOLOR$, $BACKGROUND$
 
-def gener(pageName, mouseColor, titleText, famouseQoute, pro, cert, inclass, description, per1, per2, per3, amount1, amount2, amount3, titleColor, textColor, primColor, background, left):
-    return (crs if not left else cls).replace("$PAGENAME$", pageName).replace("$MOUSECOLOR$", mouseColor).replace("$TITLETEXT$", titleText).replace("$FAMOUSQOUTE$", famouseQoute).replace("$PRO$", pro).replace("$CERT$", cert).replace("$INCLASS$", inclass).replace("$DESCRIPTION$", description).replace("$PER1$", per1).replace("$PER2$", per2).replace("$PER3$", per3).replace("$AMOUNT1$", amount1).replace("$AMOUNT2$", amount2).replace("$AMOUNT3$", amount3).replace("$TITLECOLOR$", titleColor).replace("$TEXTCOLOR$", textColor).replace("$PRIMCOLOR$", primColor).replace("$BACKGROUND$", background)
+def gener(pageName, mouseColor, titleText, famouseQoute, pro, cert, inclass, description, per1, per2, per3, amount1, amount2, amount3, titleColor, textColor, primColor, background, imageLink, left):
+    return (crs if not left else cls).replace("$PAGENAME$", pageName).replace("$MOUSECOLOR$", mouseColor).replace("$TITLETEXT$", titleText).replace("$FAMOUSQOUTE$", famouseQoute).replace("$PRO$", pro).replace("$CERT$", cert).replace("$INCLASS$", inclass).replace("$DESCRIPTION$", description).replace("$PER1$", per1).replace("$PER2$", per2).replace("$PER3$", per3).replace("$AMOUNT1$", amount1).replace("$AMOUNT2$", amount2).replace("$AMOUNT3$", amount3).replace("$TITLECOLOR$", titleColor).replace("$TEXTCOLOR$", textColor).replace("$PRIMCOLOR$", primColor).replace("$BACKGROUND$", background).replace("$IMAGELINK$", imageLink)
 
 teachers = [["hong-hanh", "Lê Thị Hồng Hạnh", "Mấy bạn nam lớp tin dễ thương", "GD KT&PL", "Đại học", "", """Cô Lê Thị Hồng Hạnh là một giáo viên rất hiền. Dù là năm đầu dạy lớp ghép, còn nhiều vấn đề và lớp em còn được cô đánh giá là quậy hơn hơn những học sinh lớp 10 bình thường nhưng cô rất ít khi lớn tiếng với học sinh. Không chỉ vậy, cô rất dễ tha thứ cho các học sinh phạm lỗi (điển hình là bạn Pháp). Các tiết học của cô khá thoải mái, ngoài dạy kiến thức cô thường kể thêm một số câu chuyện khá thú vị để lấy dẫn chứng cho bài học.""", ["Hiền", "100"], ["Kiên nhẫn", "70"], ["Năng động", "10"]],
             ["thi-xuan", "Trương Thị Xuân", "", "Lịch sử", "Thạc sĩ", "Cô đến tuổi ni rồi còn chưa sướng bằng họ.", """Cô Trương Thị Xuân là một giáo viên tận tâm với nghề có thể thấy rõ qua việc cô rất thích kể về những câu chuyện lịch sử ngày xưa, cô kể rất chi tiết và đầy đủ những câu chuyện về các nhân vật lịch sử. Một môn học được cho là khô khan thì qua cách dạy học của cô nó đã trở nên thú vị hơn nhiều.""", ["Đam mê", "90"], ["Tận tâm", "70"], ["Kiên nhẫn", "70"]],
@@ -138,5 +140,5 @@ colors = [
 
 l = False
 for c, t in enumerate(teachers):
-    print(gener(t[0], colors[c][0], t[1], t[2], t[3], t[4], t[5], t[6], t[7][0], t[8][0], t[9][0], t[7][1], t[8][1], t[9][1], colors[c][1], colors[c][2], colors[c][3], colors[c][4], l))
+    print(gener(t[0], colors[c][0], t[1], t[2], t[3], t[4], t[5], t[6], t[7][0], t[8][0], t[9][0], t[7][1], t[8][1], t[9][1], colors[c][1], colors[c][2], colors[c][3], colors[c][4], "", l))
     l = not l
