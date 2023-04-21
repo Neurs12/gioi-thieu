@@ -138,14 +138,18 @@ html, body {
     justify-content: center;
 }
 
+.title {
+    font-size: 4vmin;
+}
+
 .famous-word {
-    font-size: 150%;
+    font-size: 2.5vmin;
     font-style: italic;
 }
 
 .description {
     text-align: left;
-    font-size: 125%;
+    font-size: 2vmin;
 }
 
 .stats {
